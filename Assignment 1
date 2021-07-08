@@ -1,0 +1,76 @@
+void main() {
+  List<Map<String, Map<String, dynamic>>>? stds = [
+    {
+      'data': {
+        'name': 'Ahmed',
+        'email': 'ahmed@y.com',
+        'age': 20,
+        'upsent': ['10-10-2021', '13-12-2021', '10-5-2021']
+      },
+    },
+    {
+      'data': {
+        'name': 'ali',
+        'email': 'ali@x.com',
+        'age': 22,
+        'upsent': ['13-12-2021', '10-5-2021', '15-5-2021']
+      }
+    },
+    {
+      'data': {
+        'name': 'hosam',
+        'email': 'hosam@aa.com',
+        'age': 26,
+        'upsent': ['13-12-2021']
+      }
+    },
+    {
+      'data': {
+        'name': 'tarek',
+        'email': 'tarek@aaa.com',
+        'age': 27,
+        'upsent': [
+          '13-12-2021',
+          '10-5-2021',
+          '12-5-2021',
+          '11-5-2021',
+          '1-5-2021'
+        ]
+      }
+    },
+    {
+      'data': {
+        'name': 'abdallah',
+        'email': 'abdallah@w.com',
+        'age': 24,
+        'upsent': ['13-12-2021']
+      }
+    },
+  ];
+  for (var i = 0; i < stds.length; i++) {
+    if (stds[i]['data']!['email'].contains('@')) {
+    } else {
+      print("Missing @");
+    }
+    if (stds[i]['data']!['email'].contains('.com')) {
+    } else {
+      print("Missing .com");
+    }
+    if (stds[i]['data']!['email'].toLowerCase() ==
+        (stds[i]['data']!['email'])) {
+      print('True');
+    } else {
+      print("NO CAPITAL ALLOWED ");
+    }
+  }
+  for (var i = 0; i < stds.length; i++) {
+    if (stds[i]['data']!['upsent'].length > (5)) {
+      stds[i]['data']!['upsent'].remove();
+    } else {
+      if (stds[i]['data']!['upsent'].length == (3)) {
+        print(stds[i]['data']!['upsent'].add('WARNING !'));
+      }
+    }
+  }
+  print(stds);
+}
